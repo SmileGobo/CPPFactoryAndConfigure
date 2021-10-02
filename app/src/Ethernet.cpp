@@ -8,3 +8,7 @@ void Ethernet::setTarget(std::string&& host, uint16_t port){
 void Ethernet::setRecievePort(uint16_t port) {
     _port = port;
 }
+
+std::string Ethernet::getType() const {
+    return "Type::Ethernet";
+}

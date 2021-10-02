@@ -8,6 +8,7 @@ public:
     using Transport::Transport;
     void setTarget(std::string&& host, std::uint16_t port);
     void setRecievePort(std::uint16_t port);
+
 private:
     struct {
         std::string   host {};
@@ -15,6 +16,10 @@ private:
     } _target;
     std::uint16_t _port;
 
+
+    // Transport interface
+public:
+    std::string getType() const;
 };
 
 #endif // ETHERNET_H

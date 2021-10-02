@@ -23,6 +23,10 @@ public:
     int toInt(){
         return static_cast<int>(_value);
     }
+
+    Transport::Type get() const {
+        return _value;
+    }
     Transport::Type _value {Transport::Type::Max};
 };
 
@@ -34,7 +38,7 @@ std::istream &operator>>(std::istream& is, TransportType& target) {
 }
 
 std::ostream& operator<<(std::ostream& stream, TransportType& target) {
-    stream << "Type value as Int[ " << target.toInt() << "]";
+    stream << "Type value as Int[" << target.toInt() << "]";
     return stream;
 }
 
@@ -43,6 +47,8 @@ int main() {
     std::cout << "print type eth|serial of item" << std::endl;
     TransportType type;
     std::cin >> type;
-    std::cout << type << std::endl;
+    auto rslt = factory.create(type.get(), 12);
+
+    std::cout << type << " instance [" << rslt->getType() << "]" <<std::endl;
     return 0;
 }

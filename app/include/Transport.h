@@ -6,6 +6,7 @@
 
 class Transport {
 public:
+    virtual ~Transport() = default;
     enum class Type {
         Ethernet,
         Serial,
@@ -14,6 +15,9 @@ public:
 
     using Ptr =std::shared_ptr<Transport>;
     Transport(std::uint32_t id);
+
+    // чисто для демонстрации
+    virtual std::string getType() const = 0;
 private:
     std::uint32_t  _id;
 };

@@ -10,6 +10,8 @@ public:
 
     void setDevice(std::string&& val);
     void setBaudrate(std::uint32_t val);
+
+    std::string getType() const override;
 private:
     std::string _device;
     std::uint32_t _baudrate;
