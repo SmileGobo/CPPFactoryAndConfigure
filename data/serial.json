@@ -1,0 +1,7 @@
+{
+    "type": "serial",
+    "config": {
+        "device": "./COM1",
+        "baudrate": 19200
+    }
+}
