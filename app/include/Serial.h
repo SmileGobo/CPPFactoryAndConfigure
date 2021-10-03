@@ -12,6 +12,7 @@ public:
     void setBaudrate(std::uint32_t val);
 
     std::string getType() const override;
+    void init(const IBuilder& bldr);
 private:
     std::string _device;
     std::uint32_t _baudrate;

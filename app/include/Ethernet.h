@@ -8,7 +8,7 @@ public:
     using Transport::Transport;
     void setTarget(std::string&& host, std::uint16_t port);
     void setRecievePort(std::uint16_t port);
-
+    void init(const IBuilder& bldr) override;
 private:
     struct {
         std::string   host {};

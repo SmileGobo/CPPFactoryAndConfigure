@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <memory>
 
+class IBuilder;
 class Transport {
 public:
     virtual ~Transport() = default;
@@ -15,6 +16,8 @@ public:
 
     using Ptr =std::shared_ptr<Transport>;
     Transport(std::uint32_t id);
+    //отложенная инициализация
+    virtual void init(const IBuilder& builder) = 0;
 
     // чисто для демонстрации
     virtual std::string getType() const = 0;
